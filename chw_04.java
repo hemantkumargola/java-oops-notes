@@ -1,37 +1,23 @@
-/*
-### 4. What is an Object?
+/*1\. throw: In Java, `throw` is a keyword used to explicitly throw an exception object.
 
-**Definition:**
-An **object** is an instance of a class. It is used to access the data and methods of a class.
+2\. throws: In Java, `throws` is a keyword used to declare exceptions that a method may throw during execution. */
 
-**Example:**
+/**
+ * chw_04
+ */
 
-*/ 
-
-class Student {
-    String name = "Hemant";
-
-    void study() {
-        System.out.println("Student is studying");
-    }
-}
 
 class chw_04 {
-    public static void main(String[] args) {
-        Student s1 = new Student();
+    public static void checkAge(int age) {
 
-        System.out.println(s1.name);
-        s1.study();
+        if (age < 18) {
+            throw new ArithmeticException("You are not eligible to vote");
+        }
+
+        System.out.println("You are eligible to vote");
+    }
+
+    public static void main(String[] args) {
+        checkAge(16);
     }
 }
-
-
-
-/*
-
-Here:
-
-* `Student` → **Class**
-* `s1` → **Object**
-* `new Student()` → Creates the object.
- */

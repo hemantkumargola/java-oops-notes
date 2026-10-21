@@ -1,32 +1,19 @@
-/*
-### 5. Difference Between Class and Object
 
-| Class                                    | Object                                     |
-| ---------------------------------------- | ------------------------------------------ |
-| Class is a **blueprint/template**.       | Object is an **instance of a class**.      |
-| It defines data and methods.             | It uses the data and methods of the class. |
-| It does not represent a specific entity. | It represents a specific entity.           |
-| Example: `Student`                       | Example: `s1`                              |
-| A class can create multiple objects.     | Each object has its own data.              |
-
-**Simple Example:**
-
-
-
-
- */
-
-class Student {
-    String name;
-}
+import java.io.*;
 
 class chw_05 {
+
+    static void readFile() throws IOException {
+        FileReader file = new FileReader("data.txt");
+        System.out.println("File opened successfully");
+        file.close();
+    }
+
     public static void main(String[] args) {
-        Student s1 = new Student();  // Object
-        s1.name = "Hemant";
+        try {
+            readFile();
+        } catch (IOException e) {
+            System.out.println("File not found or cannot be read");
+        }
     }
 }
-
-/*👉 Class = Blueprint
-👉 Object = Real thing created from the blueprint
- */

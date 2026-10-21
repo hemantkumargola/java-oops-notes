@@ -1,34 +1,52 @@
-/*### 6. What is a Constructor?
 
-**Definition:**
-A **constructor** is a special method in Java that is used to **initialize an object**.
+class MyException extends Exception {
+    MyException(String message) {
+        super(message);
+    }
+}
 
-or
-"A constructor is used to give initial values to an object."
+public class chw_06 {
+    public static void main(String[] args) {
+
+        int age = 16;
+
+        try {
+            if (age < 18) {
+                throw new MyException("Invalid age!");
+            }
+
+            System.out.println("Eligible");
+
+        } catch (MyException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
 
 
-**Example:**
+/*more example 
 
-*/
+class LowBalanceException extends Exception {
+    LowBalanceException(String msg) {
+        super(msg);
+    }
+}
 
+public class Main {
+    public static void main(String[] args) {
+        int balance = 500;
+        int withdraw = 1000;
 
-// class Student {
-//     String name;
+        try {
+            if (withdraw > balance) {
+                throw new LowBalanceException("Balance is low!");
+            }
 
-//     Student() {
-//         name = "Hemant";
-//     }
-// }
-// ```
+            System.out.println("Withdraw successful");
 
-/* 
-
-Here, `Student()` is the **constructor**.
-
-### Key Points:
-
-* Constructor name is **same as class name**.
-* It has **no return type**.
-* It is automatically called when an object is created.
-* It is used to **initialize object data**.
+        } catch (LowBalanceException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
  */
